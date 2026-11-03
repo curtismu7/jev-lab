@@ -66,6 +66,8 @@ export async function runChecks({ env = process.env } = {}) {
     ? `Mock and Real: Real is configured (${modeState.info().model}); the toggle switches without a restart. Default source: ${modeState.source()}.`
     : 'Mock and Real toggle present; Real is not configured (no OPENROUTER_API_KEY or JEV_ENDPOINT in ~/Development/.env), so the Real button is disabled with the how-to. Default: Mock.' );
   add('tenant', 'pass', 'mock only: no tenant, no credentials, no outbound network, no LLM API');
+  try { const { DIAGRAM_NAMES, loadDiagram } = await import('./diagramData.js'); for (const n of DIAGRAM_NAMES) loadDiagram(n); add('diagrams', 'pass', `${DIAGRAM_NAMES.length} diagram(s) are valid diagram-studio/1 data, loaded by name`); }
+  catch (e) { add('diagrams', 'fail', e.message); }
   return checks;
 }
 

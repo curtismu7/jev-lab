@@ -8,6 +8,7 @@ import { hostCheck, sameOriginWrites, scanHosts, scanKeys } from './safety.js';
 import { createHealth } from './health.js';
 import { SCENARIOS, DECIDERS, rulesDecide, modelDecide } from './decisions.js';
 import { GUARDRAIL_CORPUS, INTENT_CORPUS } from './corpora.js';
+import { DIAGRAM_NAMES, loadDiagram } from './diagramData.js';
 import { createMode, MODES } from './mode.js';
 import { realDecide } from './realModel.js';
 
@@ -50,6 +51,11 @@ export function createApp({ health = createHealth(), mode = createMode() } = {})
     return res.json({ ...mode.info(), banner: BANNER(mode.source()), epoch });
   });
 
+  api.get('/diagram', (req, res) => {
+    res.set('Cache-Control', 'no-store');
+    const name = DIAGRAM_NAMES.includes(req.query.name) ? req.query.name : DIAGRAM_NAMES[0];
+    return res.json(loadDiagram(name));
+  });
   api.get('/catalog', (_req, res) => res.json({
     banner: BANNER(mode.source()), source: mode.source(), limits: LIMITS,
     scenarios: Object.values(SCENARIOS).map(({ key, kind, question, choices, choiceLabels, about, howUsed }) => ({ key, kind, question, choices, choiceLabels, about, howUsed })),

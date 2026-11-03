@@ -1,0 +1,27 @@
+{
+  "schema": "diagram-studio/1",
+  "id": "jev-decision-loop",
+  "title": "The JEV decision loop: evidence in, judged decision out",
+  "lede": "An agent's decision is scored against the policy on three axes - attack, innocent, intent - before any action is taken.",
+  "groups": {
+    "agent": { "label": "AI agent (our code)", "color": "grey" },
+    "jev": { "label": "Decision model (JEV)", "color": "red" },
+    "policy": { "label": "Policy (thresholds)", "color": "dark" },
+    "action": { "label": "Action", "color": "dark" }
+  },
+  "nodes": [
+    { "id": "request", "group": "agent", "label": "Decision request", "sub": ["context + proposed action"], "x": 0, "y": 0 },
+    { "id": "jev", "group": "jev", "label": "JEV model", "sub": ["attack / innocent / intent scores"], "x": 3, "y": 0 },
+    { "id": "policy", "group": "policy", "label": "Threshold policy", "sub": ["slider: allow / review / refuse"], "x": 6, "y": 0 },
+    { "id": "allow", "group": "action", "label": "Allow", "sub": ["action proceeds"], "x": 9, "y": 0 },
+    { "id": "review", "group": "action", "label": "Review", "sub": ["human in the loop"], "x": 9, "y": 3 },
+    { "id": "refuse", "group": "action", "label": "Refuse", "sub": ["action blocked, reason recorded"], "x": 9, "y": 6 }
+  ],
+  "edges": [
+    { "id": "e1", "from": "request", "to": "jev", "label": "score" },
+    { "id": "e2", "from": "jev", "to": "policy", "label": "verdict vs thresholds" },
+    { "id": "e3", "from": "policy", "to": "allow", "label": "below allow line" },
+    { "id": "e4", "from": "policy", "to": "review", "label": "grey zone" },
+    { "id": "e5", "from": "policy", "to": "refuse", "label": "past refuse line" }
+  ]
+}
