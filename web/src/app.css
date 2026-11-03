@@ -52,40 +52,11 @@ input[type="checkbox"] { width: 20px; height: 20px; min-height: 0; padding: 0; a
 .claims th[scope="row"] { white-space: nowrap; font-family: var(--font-mono); font-weight: 700; }
 .claim--intent { background: var(--surface-2); box-shadow: inset 4px 0 0 var(--status-info); }
 
-.flow { height: min(480px, 70vh); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); }
 .flow .react-flow { --xy-background-color-default: var(--surface); --xy-edge-stroke-default: var(--muted); --xy-edge-label-background-color-default: var(--surface); --xy-edge-label-color-default: var(--text); --xy-controls-button-background-color-default: var(--surface); --xy-controls-button-color-default: var(--text); --xy-controls-button-border-color-default: var(--border); --xy-controls-button-background-color-hover-default: var(--surface-2); --xy-background-pattern-dots-color-default: var(--border); }
-.flow .react-flow__controls { box-shadow: none; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.flow .react-flow__controls-button { border: 1px solid var(--border); background: var(--surface); color: var(--text); }
-.flow .react-flow__controls-button svg { fill: currentcolor; }
-.flow .react-flow__arrowhead polyline { stroke: var(--muted); fill: var(--muted); }
-.flow .react-flow__edge-text { fill: var(--text); font-size: 12px; }
-.flow .react-flow__edge-textbg { fill: var(--surface); }
-.flow .react-flow__handle { opacity: 0; pointer-events: none; }
-.flow-box { width: 240px; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--on-box); background: var(--box-dark); border: 2px solid var(--border); border-radius: 8px; }
-.flow-box strong { font-size: 14px; color: var(--on-box); }
-.flow-box[data-group="issuer"] { background: var(--box-blue); }
-.flow-box[data-group="gateway"] { background: var(--box-grey); }
-.flow-box[data-group="thief"] { background: var(--box-red); }
-.flow-box[data-on="true"] { border-color: var(--focus); box-shadow: 0 0 0 4px var(--focus); }
-.flow-box[data-deny="true"] { border-color: var(--danger-text); box-shadow: 0 0 0 4px var(--danger-text); }
-.flow-box[data-dim="true"] { opacity: 0.7; }
-.flow .react-flow__edge.flow-edge--on .react-flow__edge-path { stroke: var(--focus); stroke-width: 3; }
-.flow .react-flow__edge.flow-edge--deny .react-flow__edge-path { stroke: var(--danger-text); stroke-width: 3; stroke-dasharray: 6 4; }
-.flow .react-flow__edge.flow-edge--dashed .react-flow__edge-path { stroke-dasharray: 4 4; }
 .caption { min-height: 48px; margin: 10px 0; padding: 8px 12px; border: 1px solid var(--border); border-left: 4px solid var(--status-ok); border-radius: 8px; background: var(--surface); color: var(--text); }
 .caption[data-state="deny"] { border-left-color: var(--danger-text); }
 
-.story { margin: 0 0 14px; padding: 14px 16px; border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 10px; background: var(--surface); }
-.story__eyebrow { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: var(--text); }
-.story__title { margin: 2px 0 6px; font-size: 18px; }
-.story__controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 10px 0; }
-.story__steps { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 4px; }
-.story__step { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; font-weight: 600; }
 li[data-state="current"] > .story__step { border-color: var(--accent); border-width: 2px; }
-.story__n { flex: none; display: inline-grid; place-items: center; min-width: 22px; height: 22px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 12px; }
-.story__tag { margin-left: auto; flex: none; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--status-ok); color: var(--status-ok); font-size: 12px; font-weight: 700; }
-.story__tag[data-state="refused"] { border-color: var(--danger-text); color: var(--danger-text); }
-.story__takeaway { margin: 6px 0 0; font-weight: 700; }
 
 .stolen { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 8px; }
 .stolen__item { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-2); }
@@ -98,7 +69,6 @@ li[data-state="current"] > .story__step { border-color: var(--accent); border-wi
 .presenter-say { margin: 8px 0; padding: 10px 14px; border: 1px solid var(--status-info); border-radius: 8px; background: var(--surface-2); color: var(--text); }
 button[aria-disabled="true"] { opacity: 0.75; cursor: not-allowed; }
 button.primary[aria-disabled="true"] { opacity: 0.88; }
-@media (max-width: 900px) { .flow { height: 420px; } }
 @media (max-width: 600px) {
   .head__title { font-size: 18px; }
   .card, .story { padding: 10px 12px; }
