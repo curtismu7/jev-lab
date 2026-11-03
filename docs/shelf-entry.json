@@ -10,8 +10,15 @@
       "healthPath": "/api/health",
       "composeFile": "jev-lab/docker-compose.yml",
       "composeOverlays": [],
-      "tags": ["learning", "ai-agent-security", "simulated"],
+      "tags": [
+        "learning",
+        "ai-agent-security",
+        "simulated"
+      ],
       "notes": "Host-run: ./scripts/run.sh (port 7550). Mock only: no tenant, no credentials, no LLM API. Docker: HOST_PORT=7550 docker compose up --build -d (published on 127.0.0.1 only). composeFile is relative to the demo root (the folder above this checkout)."
     }
+  ],
+  "pingProducts": [
+    "pingone"
   ]
 }
