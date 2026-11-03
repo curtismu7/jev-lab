@@ -1,0 +1,17 @@
+{
+  "demos": [
+    {
+      "id": "jev-lab",
+      "name": "JEV Decision Model LAB",
+      "catalogId": "D110",
+      "kind": "Tester",
+      "description": "System One vs System Two for agent decisions: a keyword filter and a (simulated) decision model judge the same prompt-injection, intent-routing and step-up-risk inputs, then a live threshold slider flips the same score between Allow, Step-up and Deny. Mock only; the model is a deterministic feature scorer, not an LLM, and makes no claim about any product.",
+      "url": "http://localhost:7550",
+      "healthPath": "/api/health",
+      "composeFile": "jev-lab/docker-compose.yml",
+      "composeOverlays": [],
+      "tags": ["learning", "ai-agent-security", "simulated"],
+      "notes": "Host-run: ./scripts/run.sh (port 7550). Mock only: no tenant, no credentials, no LLM API. Docker: HOST_PORT=7550 docker compose up --build -d (published on 127.0.0.1 only). composeFile is relative to the demo root (the folder above this checkout)."
+    }
+  ]
+}

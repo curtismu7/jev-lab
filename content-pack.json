@@ -1,0 +1,119 @@
+{
+  "schema": "demo-content-pack/1",
+  "id": "jev-lab",
+  "title": "JEV Decision Model LAB",
+  "version": "0.1.0",
+  "demo": {
+    "id": "jev-lab",
+    "name": "JEV Decision Model LAB",
+    "catalog": "D110",
+    "baseUrl": "http://localhost:7550",
+    "doctor": "/api/health",
+    "tags": [
+      "jev",
+      "decision-model",
+      "guardrail",
+      "prompt-injection",
+      "intent",
+      "step-up-risk",
+      "threshold-policy",
+      "mock",
+      "simulated"
+    ]
+  },
+  "glossary": [
+    {
+      "id": "system-one",
+      "term": "System One (decision model)",
+      "definition": "A small model that answers a typed question with a typed answer - a choice, a confidence, or P(yes) - in milliseconds. Classified, routed and gated judgments, not prose.",
+      "aliases": [
+        "fast thinking"
+      ]
+    },
+    {
+      "id": "system-two",
+      "term": "System Two (generative LLM)",
+      "definition": "A large language model. Best at explaining, drafting and planning; seconds and prose for what should be milliseconds and a number.",
+      "aliases": [
+        "slow thinking",
+        "LLM"
+      ]
+    },
+    {
+      "id": "noul",
+      "term": "P(yes) question",
+      "definition": "A decision-model question whose answer is a probability that the text has the asked property. The guardrail and risk scenarios use it.",
+      "aliases": [
+        "score question"
+      ]
+    },
+    {
+      "id": "choice",
+      "term": "Choice question",
+      "definition": "A decision-model question whose answer is one of the listed criteria, with a confidence. The intent-routing scenario uses it."
+    },
+    {
+      "id": "threshold-policy",
+      "term": "Threshold policy",
+      "definition": "The policy that maps a score to an outcome: allow below the step-up line, challenge between the lines, deny at or above the deny line. The thresholds are policy, not the model's."
+    },
+    {
+      "id": "false-alarm",
+      "term": "False alarm",
+      "definition": "A fine message a keyword filter blocks. Costs the customer an extra step - the price of a brittle filter."
+    },
+    {
+      "id": "missed-attack",
+      "term": "Missed attack",
+      "definition": "A hostile message a filter lets through. It reaches the tool. The two mistake kinds cost different things."
+    },
+    {
+      "id": "simulated",
+      "term": "SIMULATED model",
+      "definition": "This lab's decision model is a deterministic feature scorer, not a neural network or an API. Every score is labelled SIMULATED; the lab makes no claims about any product."
+    }
+  ],
+  "cards": [
+    {
+      "id": "try-injection",
+      "label": "Prompt injection",
+      "description": "Does this text try to override the assistant or trick it into leaking data or moving money?",
+      "group": "try-it",
+      "action": {
+        "type": "route",
+        "href": "/#/judge"
+      }
+    },
+    {
+      "id": "try-intent",
+      "label": "Intent routing",
+      "description": "Which banking action is the customer asking for?",
+      "group": "try-it",
+      "action": {
+        "type": "route",
+        "href": "/#/judge"
+      }
+    },
+    {
+      "id": "try-risk",
+      "label": "Step-up risk",
+      "description": "Is this transfer unusual enough to need extra verification?",
+      "group": "try-it",
+      "action": {
+        "type": "route",
+        "href": "/#/judge"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "draft-ietf-oauth-agentic-clients",
+      "title": "Agentic client access (draft)",
+      "url": "https://www.rfc-editor.org/rfc/draft-ietf-oauth-agentic-clients",
+      "kind": "standard",
+      "use": "The delegation context this lab sits beside",
+      "status": "read",
+      "checked": "2026-11-03"
+    }
+  ]
+}

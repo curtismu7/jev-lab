@@ -1,0 +1,7 @@
+{
+  "scenarios": [
+    { "key": "injection", "label": "Prompt injection", "question": "Does this text try to override the assistant or trick it into leaking data or moving money?" },
+    { "key": "intent", "label": "Intent routing", "question": "Which banking action is the customer asking for?" },
+    { "key": "risk", "label": "Step-up risk", "question": "Is this transfer unusual enough to need extra verification?" }
+  ]
+}
