@@ -34,10 +34,10 @@ test('content pack validation rejects a broken pack', () => {
   assert.ok(validatePack(pack).length > 0);
 });
 
-test('shelf entry matches the demo: id, provisional catalog D110, port, health path, loopback url, portable composeFile', () => {
+test('shelf entry matches the demo: id, provisional catalog D113, port, health path, loopback url, portable composeFile', () => {
   const [d] = JSON.parse(read('docs/shelf-entry.json')).demos;
   assert.equal(d.id, 'jev-lab');
-  assert.equal(d.catalogId, 'D110');
+  assert.equal(d.catalogId, 'D113');
   assert.equal(d.kind, 'Tester');
   assert.equal(d.healthPath, '/api/health');
   const u = new URL(d.url);
@@ -136,7 +136,7 @@ test('README follows the README standard: title ends in LAB, plain Tier and Repo
   assert.match(r.split('\n')[0], /^# .* LAB$/);
   assert.match(r, /^Tier: Tester$/m);
   assert.match(r, /^Repo: https:\/\/github\.com\/ping-sandbox\/jev-lab$/m);
-  assert.match(r, /^Catalog: D110/m);
+  assert.match(r, /^Catalog: D113/m);
   const heads = [...r.matchAll(/^## (.+)$/gm)].map((m) => m[1]);
   const want = ['What is simulated', 'Run from a clone', 'Settings file', 'Ports, and what to do if the port is taken', 'Mock and Real modes', 'Health, doctor and reset', 'Docker', 'Tests', 'Troubleshooting', 'Ownership'];
   const at = want.map((w) => heads.findIndex((h) => h.startsWith(w)));

@@ -6,7 +6,7 @@
   "demo": {
     "id": "jev-lab",
     "name": "JEV Decision Model LAB",
-    "catalog": "D110",
+    "catalog": "D113",
     "baseUrl": "http://localhost:7550",
     "doctor": "/api/health",
     "tags": [

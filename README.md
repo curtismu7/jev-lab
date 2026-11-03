@@ -2,7 +2,7 @@
 
 Tier: Tester
 Repo: https://github.com/ping-sandbox/jev-lab
-Catalog: D110
+Catalog: D113
 
 An agent needs fast, typed judgments — block this text, route this request, score this risk — and a generative LLM is seconds and prose for what should be milliseconds and a number. This lab puts two deciders side by side on the same inputs: a brittle keyword filter and a decision model that reads meaning (SIMULATED here: a deterministic feature scorer, not an LLM, not an API), then lets you drag the threshold policy and watch the same score flip between Allow, Step-up and Deny.
 

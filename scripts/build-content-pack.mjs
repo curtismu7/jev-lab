@@ -17,7 +17,7 @@ export function buildPack() {
     id: 'jev-lab',
     title: 'JEV Decision Model LAB',
     version,
-    demo: { id: 'jev-lab', name: 'JEV Decision Model LAB', catalog: 'D110', baseUrl: 'http://localhost:7550', doctor: '/api/health', tags: ['jev', 'decision-model', 'guardrail', 'prompt-injection', 'intent', 'step-up-risk', 'threshold-policy', 'mock', 'simulated'] },
+    demo: { id: 'jev-lab', name: 'JEV Decision Model LAB', catalog: 'D113', baseUrl: 'http://localhost:7550', doctor: '/api/health', tags: ['jev', 'decision-model', 'guardrail', 'prompt-injection', 'intent', 'step-up-risk', 'threshold-policy', 'mock', 'simulated'] },
     glossary: [
       { id: 'system-one', term: 'System One (decision model)', definition: 'A small model that answers a typed question with a typed answer - a choice, a confidence, or P(yes) - in milliseconds. Classified, routed and gated judgments, not prose.', aliases: ['fast thinking'] },
       { id: 'system-two', term: 'System Two (generative LLM)', definition: 'A large language model. Best at explaining, drafting and planning; seconds and prose for what should be milliseconds and a number.', aliases: ['slow thinking', 'LLM'] },
