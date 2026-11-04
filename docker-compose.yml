@@ -12,6 +12,11 @@ services:
       PORT: "7550"
       JEVL_BIND: 0.0.0.0
       LAB_ALLOWED_HOSTS: ${LAB_ALLOWED_HOSTS:-}
+    env_file:
+      - path: ${STANDALONE_ENV:-/Users/cmuir/Development/.env}
+        required: false
+    extra_hosts:
+      - "local.ping-devops.com:host-gateway"
     read_only: true
     cap_drop: [ALL]
     security_opt: ["no-new-privileges:true"]
