@@ -38,7 +38,7 @@ test('shelf entry matches the demo: id, provisional catalog D113, port, health p
   const [d] = JSON.parse(read('docs/shelf-entry.json')).demos;
   assert.equal(d.id, 'jev-lab');
   assert.equal(d.catalogId, 'D113');
-  assert.equal(d.kind, 'Tester');
+  assert.equal(d.kind, 'Demo');
   assert.equal(d.healthPath, '/api/health');
   const u = new URL(d.url);
   assert.equal(u.hostname, 'localhost');
@@ -134,7 +134,7 @@ test('the talk track is generated from the scenario data and the committed file 
 test('README follows the README standard: title ends in LAB, plain Tier and Repo and Catalog lines, the 12 sections in order, the port text', () => {
   const r = read('README.md');
   assert.match(r.split('\n')[0], /^# .* LAB$/);
-  assert.match(r, /^Tier: Tester$/m);
+  assert.match(r, /^Tier: Demo$/m);
   assert.match(r, /^Repo: https:\/\/github\.com\/curtismu7\/jev-lab$/m);
   assert.match(r, /^Catalog: D113/m);
   const heads = [...r.matchAll(/^## (.+)$/gm)].map((m) => m[1]);

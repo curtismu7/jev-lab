@@ -1,6 +1,6 @@
 # JEV Decision Model LAB
 
-Tier: Tester
+Tier: Demo
 Repo: https://github.com/curtismu7/jev-lab
 Catalog: D113
 

@@ -1,4 +1,4 @@
-# jev-lab — JEV Decision Model LAB (catalog E12, Tester tier)
+# jev-lab — JEV Decision Model LAB (catalog E12, Demo tier)
 
 An agent needs fast, typed judgments; a generative LLM is seconds and prose for what should be milliseconds and a number. This lab puts two deciders side by side — a brittle keyword filter and a decision model — on the same prompt-injection, intent-routing and step-up-risk inputs, then lets the presenter drag threshold policy lines and watch the same score flip Allow / Step-up / Deny.
 
