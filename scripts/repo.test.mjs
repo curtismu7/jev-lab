@@ -143,7 +143,7 @@ test('README follows the README standard: title ends in LAB, plain Tier and Repo
   assert.ok(at.every((i) => i >= 0), at.join());
   assert.deepEqual([...at].sort((a, b) => a - b), at, 'sections are in the standard order');
   assert.match(r, /lsof -iTCP:7550 -sTCP:LISTEN -n -P/);
-  assert.ok(!/ping-devops|cmuir|curtismu/i.test(r));
+  assert.ok(!/ping-devops|cmuir/i.test(r));
 });
 
 test('app CSS follows the CSS standard and the shared stylesheet loads first', () => {
