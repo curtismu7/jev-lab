@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import ShelfLink from "./components/ShelfLink.jsx";
 import { getCatalog, getInfo, judge, requestModeSwitch, resetServer } from "./lib/api.js";
 import ModeToggle from "./components/ModeToggle.jsx";
 import JudgeTab from "./tabs/JudgeTab.jsx";
@@ -86,6 +87,7 @@ export default function App() {
         <div className="head">
           <h1 className="head__title">JEV Decision Model LAB</h1>
           <div className="head__tools">
+            <ShelfLink />
             <ModeToggle info={info} onSelect={onMode} />
             <button type="button" className="btn" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>Theme</button>
             <button type="button" className="btn" aria-pressed={present} onClick={() => setPresent((v) => { write("jevl.present", v ? "0" : "1"); return !v; })}>Present</button>

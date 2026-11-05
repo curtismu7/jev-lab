@@ -11,6 +11,7 @@ import { GUARDRAIL_CORPUS, INTENT_CORPUS } from './corpora.js';
 import { DIAGRAM_NAMES, loadDiagram } from './diagramData.js';
 import { createMode, MODES } from './mode.js';
 import { realDecide } from './realModel.js';
+import { shelfInfo } from './shelfLink.js';
 
 const WEB_DIST = process.env.WEB_DIST || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../web/dist');
 const bad = (res, message, status = 400) => res.status(status).json({ error: status === 404 ? 'not_found' : 'bad_request', message });
@@ -112,6 +113,7 @@ export function createApp({ health = createHealth(), mode = createMode() } = {})
   // A tiny favicon so the browser stops 404ing on every load.
   app.get('/favicon.ico', (_req, res) => { res.set('Content-Type', 'image/svg+xml'); res.set('Cache-Control', 'public, max-age=86400'); res.send('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect width="16" height="16" rx="3" fill="%23b33"/><path d="M3 12 6 4h1.5l3 8H9l-.6-1.8H5.6L5 12zm3-3 1-3 1 3z" fill="white"/></svg>'); });
   app.use('/api', api);
+  app.get('/api/shelf', (_req, res) => { res.set('Cache-Control', 'no-store'); res.json(shelfInfo()); }); // the header "Shelf" button
   app.use((_req, res) => res.status(404).json({ error: 'not_found' }));
   return app;
 }
