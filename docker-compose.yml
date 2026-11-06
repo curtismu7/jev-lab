@@ -12,7 +12,7 @@ services:
       SHELF_URL: ${SHELF_URL:-}
       PORT: "7550"
       JEVL_BIND: 0.0.0.0
-      LAB_ALLOWED_HOSTS: ${LAB_ALLOWED_HOSTS:-}
+      LAB_ALLOWED_HOSTS: ${LAB_ALLOWED_HOSTS:-jev-lab.local.ping-devops.com}
     env_file:
       - path: ${STANDALONE_ENV:-/Users/cmuir/Development/.env}
         required: false
